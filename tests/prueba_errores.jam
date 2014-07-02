@@ -1,0 +1,73 @@
+##################################################################################
+# JAM v1.0 - prueba_errores.jam                                                  #
+#                                                                                #
+# Copyright (C) 2010 Anil Motilal Mahtani Mirchandani(anil.mmm@gmail.com)        #
+#                    Mikel Ganuza Estremera(mikel.ganuza101@estudiantes.ulpgc.es)#
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>  #
+# This is free software: you are free to change and redistribute it.             #
+# There is NO WARRANTY, to the extent permitted by law.                          #
+#                                                                                #
+##################################################################################
+
+#error coma en parametros funcion
+int function_test(int var1 int var2) 
+	return 0
+end
+
+
+int main(int i)
+	# Tipo indefinido
+	ufloat co = 2
+	float ala
+	# Error coma en asignacion vector
+	int vector[2] = [12, 21] 
+	# Error vector sin tamaño
+	int vector[] 
+	int i = 0
+	int j
+	ala = j
+	j = ala
+	# Error inicialización int-float
+	if a==2)
+		i = 3
+	end
+	# Inicialización incompleta
+	mikel = 
+
+	# Error sin cerrar parentesis
+	for(i=0;i<19;i=i+1 
+		for(j=i;i<=0;i=j-1) 
+			# Error en if misma línea
+			if(j!=i) <++ i 
+			if(j==i)
+				i=9
+			else
+				if(j==0) 
+					i=0
+				# Error en elsif misma línea
+				elsif j=9 )
+				end
+			end
+
+			if(i)
+				i
+			# Error else misma línea
+			else i 
+			end
+		end
+	# Falta un end
+	
+	# For incondicional
+	for(i = 0 i < 2 ; i) 
+	end
+	co = 2
+	# While en una línea
+	while(i) 	i=0 
+	end
+
+	# Error llamada parametros coma 	
+	function_test(i j)
+
+	return 0
+	
+# Falta un end de main

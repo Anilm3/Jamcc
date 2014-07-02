@@ -1,0 +1,16 @@
+int factorial(int n)
+	if(n < 2)
+		return n
+	else
+		return n*factorial(n-1)
+	end
+end
+
+int main()
+	int i
+	int j
+	for(i = 0; i < 10; i = i + 1)
+		j = factorial(i)
+		<++"factorial("++i++") : "++j++'\n'
+	end
+end

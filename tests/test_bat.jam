@@ -1,0 +1,145 @@
+##################################################################################
+# JAM v1.0 -test_bat.jam                                                         #
+#                                                                                #
+# Copyright (C) 2010 Anil Motilal Mahtani Mirchandani(anil.mmm@gmail.com)        #
+#                    Mikel Ganuza Estremera(mikel.ganuza101@estudiantes.ulpgc.es)#
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>  #
+# This is free software: you are free to change and redistribute it.             #
+# There is NO WARRANTY, to the extent permitted by law.                          #
+#                                                                                #
+##################################################################################
+
+
+# Variables globales
+
+# No inicializadas: .bss
+
+bool varboolni
+char varcharni
+int varintni
+float varfloatni
+int varintniv[5]
+
+# Inicializadas: .data
+bool varbooli = true
+char varchari = 'a'
+int varinti = 20
+float varfloati = 2.0
+int varintiv[5] = [1, 2, 3, 4, 5]
+char varstringi[12] = "Hello World\n"
+
+#Codigo .text
+void funcion(char mensaje[], int i, char c, bool d)
+	<++mensaje++" : "++i++" "++c++" "++d++"\n"
+	
+	<++"varintiv = ["
+	for(i = 0; i < 5; i = i + 1)
+		if(i != 4)
+			<++varintiv[i]++", "
+		else 
+			<++varintiv[i]++"]\n"
+		end
+	end
+end
+
+int main()
+	int i
+	int j
+	int k = 20
+	
+	<++"Entrando en for\n"
+	for(i = 0; i < 10 ; i = i +1 )
+		for(j = 0; j < 2; j = j +1)
+			switch(i)
+			case 2:
+				<++"Primo 2\n"
+			case 3:
+				<++"Primo 3\n"
+			case 5:
+				<++"Primo 5\n"
+			case 7:
+				<++"Primo 7\n"
+			default:
+				if(i == 9)
+					<++"Final en breve\n"
+				elsif(i%2 == 0)
+					k = k -1
+				else
+					k = k + 1
+				end
+			end
+		end
+	end
+	<++"Esperado: 14 "++"Obtenido: "++k++"\n"
+	<++"Saliendo de for\n"
+	
+	<++"Entrando en while\n"
+	while(k != 0)
+		k = k - 1
+		<++k++" iteraciones para salir\n"
+	end
+	
+	i = 10
+	j = 5
+	
+	k = i+j
+	<++"Esperado: 15 "++"Obtenido: "++k++"\n"
+	
+	k = i-j
+	<++"Esperado: 5 "++"Obtenido: "++k++"\n"
+	
+	k = i*j
+	<++"Esperado: 50 "++"Obtenido: "++k++"\n"
+	
+	k = i/j
+	<++"Esperado: 2 "++"Obtenido: "++k++"\n"
+	
+	k = i%j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i>j
+	<++"Esperado: 1 "++"Obtenido: "++k++"\n"
+	
+	k = i<j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i>=j
+	<++"Esperado: 1 "++"Obtenido: "++k++"\n"
+	
+	k = i<=j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i==j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i!=j
+	<++"Esperado: 1 "++"Obtenido: "++k++"\n"
+	
+	k = i<<j
+	<++"Esperado: 320 "++"Obtenido: "++k++"\n"
+	
+	k = i>>j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i&j
+	<++"Esperado: 0 "++"Obtenido: "++k++"\n"
+	
+	k = i|j
+	<++"Esperado: 15 "++"Obtenido: "++k++"\n"
+	
+	k = i^j
+	<++"Esperado: 15 "++"Obtenido: "++k++"\n"
+	
+	k = i&&j
+	<++"Esperado: 1 "++"Obtenido: "++k++"\n"
+	
+	k = i||j
+	<++"Esperado: 1 "++"Obtenido: "++k++"\n"
+	
+	k = i + j * i / 5 + 7 - k * 2
+	<++"Esperado: 25 "++"Obtenido: "++k++'\n' 
+	
+	funcion("Llamada a funcion",1,'a',false)
+	<++"Pulse enter para finalizar...\n"
+	>++k
+end

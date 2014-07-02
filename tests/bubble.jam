@@ -1,0 +1,44 @@
+##################################################################################
+# JAM v1.0 - bubble.jam                                                          #
+#                                                                                #
+# Copyright (C) 2010 Anil Motilal Mahtani Mirchandani(anil.mmm@gmail.com)        #
+#                    Mikel Ganuza Estremera(mikel.ganuza101@estudiantes.ulpgc.es)#
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>  #
+# This is free software: you are free to change and redistribute it.             #
+# There is NO WARRANTY, to the extent permitted by law.                          #
+#                                                                                #
+##################################################################################
+
+int main()
+	int desorden[20] = [8, 2, 12, 34, 23, 11, 7, 19, 99, 81, 77, 10, 13, 0, 66, 9, 3, 44, 90, 20]
+	int length = 20
+	int i
+	int j
+	int temp
+	int test
+	int aux
+
+	for(i = length - 1; i > 0; i = i - 1)
+		test = 0
+		for(j = 0; j < i; j = j + 1)
+			aux = j + 1
+			if(desorden[j] > desorden[aux])
+				temp = desorden[j]
+				desorden[j] = desorden[aux]
+				desorden[aux] = temp
+				test = 1
+			end
+		end
+
+		# exit if the list is sorted
+		if(test == 0)
+			i = 0	
+		end
+	end
+
+	<++"Solucion: "
+	for(i = 0; i < length; i = i + 1)
+		<++desorden[i]++" "
+	end
+	<++"\n"
+end
