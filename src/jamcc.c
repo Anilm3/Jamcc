@@ -2886,7 +2886,7 @@ int main(int argc, char** argv) {
 					break;
 				case 0:
 					sprintf(str_out1,"%s.o",output);
-					execlp("gcc","gcc","-o", output, str_out1, NULL);
+					execlp("gcc","gcc","-m32", "-o", output, str_out1, NULL);
 					/* Exec failed */
 					fprintf(stderr, "Error   : GCC not found\n");
 					exit(0);
